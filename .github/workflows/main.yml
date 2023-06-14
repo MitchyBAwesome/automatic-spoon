@@ -13,8 +13,5 @@ jobs:
       - name: Install CFN-Guard
         run: curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-cloudformation/cloudformation-guard/main/install-guard.sh | sh
       
-      - name: Add to path
-        run: PATH=${PATH}:~/.guard/bin
-      
       - name: Validate templates
-        run: cfn-guard validate -d ./ -r ./ --show-summary all
+        run: ~/.guard/bin/cfn-guard validate -d ./ -r ./ --show-summary all
