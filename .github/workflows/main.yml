@@ -9,7 +9,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Run CFN-Guard
-        run: | 
-          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-cloudformation/cloudformation-guard/main/install-guard.sh | sh
-          ~/.guard/bin/cfn-guard validate -d ./ -r ./ --show-summary all
+        
+      - name: Install CFN-Guard
+        run: curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-cloudformation/cloudformation-guard/main/install-guard.sh | sh
+      
+      - name: Add to path
+        run: PATH=${PATH}:~/.guard/bin
+      
+      - name: Validate templates
+        run: cfn-guard validate -d ./ -r ./ --show-summary all
