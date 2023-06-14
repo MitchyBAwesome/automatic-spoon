@@ -13,9 +13,6 @@ Resources:
                 - ecs-tasks.amazonaws.com
                 - ec2.amazonaws.com
             Action: ['sts:AssumeRole']
-            Condition:
-              StringLike: 
-                aws:PrincipalOrgID: "122345" 
         Path: /
         Policies:
           - PolicyName: AmazonECSTaskRolePolicy
