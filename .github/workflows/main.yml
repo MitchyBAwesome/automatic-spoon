@@ -12,4 +12,4 @@ jobs:
       - name: Run CFN-Guard
         run: | 
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-cloudformation/cloudformation-guard/main/install-guard.sh | sh
-          cfn-guard validate -d ./ -r ./ --show-summary all
+          ~/.guard/bin/cfn-guard validate -d ./ -r ./ --show-summary all
