@@ -11,4 +11,13 @@ Resources:
             Principal:
               AWS: "*"
             Action: ['sts:AssumeRole']
+        Policies:
+          - PolicyName: root
+            PolicyDocument:
+              Version: 2012-10-17
+              Statement:
+                - Resource: "*"
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
         Path: /
