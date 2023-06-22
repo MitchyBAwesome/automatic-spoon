@@ -25,4 +25,7 @@ jobs:
         run: pip install cfn-policy-validator
 
       - name: Validate templates
-        run: cfn-policy-validator validate --template-path ./sample-role.test.yaml --region ap-southeast-2
+        run: cfn-policy-validator validate --template-path ./sample-role-test.yaml --region ap-southeast-2
+
+
+        
