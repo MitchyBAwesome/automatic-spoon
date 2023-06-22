@@ -9,32 +9,6 @@ Resources:
           Statement:
           - Effect: Allow
             Principal:
-              Service:
-                - ecs-tasks.amazonaws.com
-                - ec2.amazonaws.com
+              AWS: "*"
             Action: ['sts:AssumeRole']
         Path: /
-        Policies:
-          - PolicyName: AmazonECSTaskRolePolicy
-            PolicyDocument:
-              Statement:
-              - Effect: Allow
-                Action:
-                  - 'ecr:GetAuthorizationToken'
-                  - 'ecr:BatchCheckLayerAvailability'
-                  - 'ecr:GetDownloadUrlForLayer'
-                  - 'ecr:BatchGetImage'
-                  - 'logs:CreateLogStream'
-                  - 'logs:CreateLogGroup'
-                  - 'logs:PutLogEvents'
-                Resource: '*'
-              
-              - Effect: Allow
-                Action:
-                  # Allows the ECS tasks to interact with only the MysfitsTable
-                  # in DynamoDB
-                  - 'dynamodb:Scan'
-                  - 'dynamodb:Query'
-                  - 'dynamodb:UpdateItem'
-                  - 'dynamodb:GetItem'
-                Resource: '*'
