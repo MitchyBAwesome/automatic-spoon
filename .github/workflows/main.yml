@@ -15,6 +15,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::614658524125:role/github-actions-access-analyzer-role
           aws-region: ap-southeast-2
+          role-session-name: GitHubSessionName
         
       - name: Install cfn-policy-validator
         run: pip install cfn-policy-validator
