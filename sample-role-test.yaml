@@ -9,11 +9,8 @@ Resources:
           Statement:
           - Effect: Allow
             Principal:
-              AWS: "arn:aws:iam::*:root"
+              AWS: "arn:aws:iam::614658524125:root"
             Action: ['sts:AssumeRole']
-            Condition:
-              StringLike:
-                aws:PrincipalOrgID: "o-4ti206djdv"
         Policies:
           - PolicyName: root
             PolicyDocument:
